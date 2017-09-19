@@ -7,6 +7,12 @@ matrix:
     - python: "3.6"
       env: TOXENV=py36
 
+addons:
+  chrome: beta
+before_install:
+  - # start your web application and listen on `localhost`
+  - google-chrome-beta --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+
 install:
   - pip install -r requirements_dev.txt
   - python setup.py install
