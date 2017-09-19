@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  <meta name="author" content="fate0">
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Home - aiochrome</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> aiochrome</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Home</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#aiochrome">aiochrome</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#table-of-contents">Table of Contents</a></li>
+        
+            <li><a class="toctree-l3" href="#installation">Installation</a></li>
+        
+            <li><a class="toctree-l3" href="#setup-chrome">Setup Chrome</a></li>
+        
+            <li><a class="toctree-l3" href="#getting-started">Getting Started</a></li>
+        
+            <li><a class="toctree-l3" href="#debug">Debug</a></li>
+        
+            <li><a class="toctree-l3" href="#tab-management">Tab management</a></li>
+        
+            <li><a class="toctree-l3" href="#examples">Examples</a></li>
+        
+            <li><a class="toctree-l3" href="#ref">Ref</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Api</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="api/browser/">Browser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="api/tab/">Tab</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">aiochrome</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/fate0/aiochrome/edit/master/docs/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="aiochrome">aiochrome</h1>
+<p><a href="https://travis-ci.org/fate0/aiochrome"><img alt="Build Status" src="https://travis-ci.org/fate0/aiochrome.svg?branch=master" /></a>
+<a href="https://codecov.io/gh/fate0/aiochrome"><img alt="Codecov" src="https://img.shields.io/codecov/c/github/fate0/aiochrome.svg" /></a>
+<a href="https://pyup.io/repos/github/fate0/aiochrome/"><img alt="Updates" src="https://pyup.io/repos/github/fate0/aiochrome/shield.svg" /></a>
+<a href="https://pypi.python.org/pypi/aiochrome"><img alt="PyPI" src="https://img.shields.io/pypi/v/aiochrome.svg" /></a>
+<a href="https://github.com/fate0/aiochrome"><img alt="PyPI" src="https://img.shields.io/pypi/pyversions/aiochrome.svg" /></a></p>
+<p>A Python Package for the Google Chrome Dev Protocol, <a href="https://fate0.github.io/aiochrome/">more document</a></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#setup-chrome">Setup Chrome</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#tab-management">Tab management</a></li>
+<li><a href="#debug">Debug</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#ref">Ref</a></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>To install aiochrome, simply:</p>
+<pre><code>$ pip install -U aiochrome
+</code></pre>
+
+<p>or from GitHub:</p>
+<pre><code>$ pip install -U git+https://github.com/fate0/aiochrome.git
+</code></pre>
+
+<p>or from source:</p>
+<pre><code>$ python setup.py install
+</code></pre>
+
+<h2 id="setup-chrome">Setup Chrome</h2>
+<p>simply:</p>
+<pre><code>$ google-chrome --remote-debugging-port=9222
+</code></pre>
+
+<p>or headless mode (chrome version &gt;= 59):</p>
+<pre><code>$ google-chrome --headless --disable-gpu --remote-debugging-port=9222
+</code></pre>
+
+<p>or use docker:</p>
+<pre><code>$ docker pull fate0/headless-chrome
+$ docker run -it --rm --cap-add=SYS_ADMIN -p9222:9222 fate0/headless-chrome
+</code></pre>
+
+<h2 id="getting-started">Getting Started</h2>
+<pre><code class="python">import asyncio
+import aiochrome
+
+
+async def main():
+    # create a browser instance
+    browser = await aiochrome.Browser(url=&quot;http://127.0.0.1:9222&quot;)
+
+    # create a tab
+    tab = await browser.new_tab()
+
+    # register callback if you want
+    def request_will_be_sent(**kwargs):
+        print(&quot;loading: %s&quot; % kwargs.get('request').get('url'))
+
+    tab.Network.requestWillBeSent = request_will_be_sent
+
+    # start the tab 
+    await tab.start()
+
+    # call method
+    await tab.Network.enable()
+    # call method with timeout
+    await tab.Page.navigate(url=&quot;https://github.com/fate0/aiochrome&quot;, _timeout=5)
+
+    # wait for loading
+    await tab.wait(5)
+
+    # stop the tab (stop handle events and stop recv message from chrome)
+    await tab.stop()
+
+    # close tab
+    await browser.close_tab(tab)
+
+
+loop = asyncio.get_event_loop()
+try:
+    loop.run_until_complete(main())
+finally:
+    loop.close()
+</code></pre>
+
+<p>or (alternate syntax)</p>
+<pre><code class="python">import asyncio
+import aiochrome
+
+
+async def main():
+    browser = await aiochrome.Browser(url=&quot;http://127.0.0.1:9222&quot;)
+    tab = await browser.new_tab()
+
+    def request_will_be_sent(**kwargs):
+        print(&quot;loading: %s&quot; % kwargs.get('request').get('url'))
+
+
+    tab.set_listener(&quot;Network.requestWillBeSent&quot;, request_will_be_sent)
+
+    await tab.start()
+    await tab.call_method(&quot;Network.enable&quot;)
+    await tab.call_method(&quot;Page.navigate&quot;, url=&quot;https://github.com/fate0/aiochrome&quot;, _timeout=5)
+
+    await tab.wait(5)
+    await tab.stop()
+
+    await browser.close_tab(tab)
+
+
+loop = asyncio.get_event_loop()
+try:
+    loop.run_until_complete(main())
+finally:
+    loop.close()
+</code></pre>
+
+<p>more methods or events could be found in
+<a href="https://chromedevtools.github.io/devtools-protocol/tot/">Chrome DevTools Protocol</a></p>
+<h2 id="debug">Debug</h2>
+<p>set DEBUG env variable:</p>
+<p><img alt="aiochrome_with_debug_env" src="https://raw.githubusercontent.com/fate0/aiochrome/master/docs/images/aiochrome_with_debug_env.png" /></p>
+<h2 id="tab-management">Tab management</h2>
+<p>run <code>aiochrome -h</code> for more info</p>
+<p>example:</p>
+<p><img alt="aiochrome_tab_management" src="https://raw.githubusercontent.com/fate0/aiochrome/master/docs/images/aiochrome_tab_management.png" /></p>
+<h2 id="examples">Examples</h2>
+<p>please see the <a href="http://github.com/fate0/aiochrome/blob/master/examples">examples</a> directory for more examples</p>
+<h2 id="ref">Ref</h2>
+<ul>
+<li><a href="https://github.com/cyrus-and/chrome-remote-interface/">chrome-remote-interface</a></li>
+<li><a href="https://chromedevtools.github.io/devtools-protocol/tot/">Chrome DevTools Protocol</a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api/browser/" class="btn btn-neutral float-right" title="Browser">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/fate0/aiochrome" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="api/browser/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="./js/theme.js"></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.16.3
+Build Date UTC : 2017-09-19 12:34:18
+-->
