@@ -74,15 +74,34 @@ class Tab:
         if self.debug:  # pragma: no cover
             print("SEND ► %s" % message_json)
 
+        if not isinstance(timeout, (int, float)) or timeout > 1:
+            q_timeout = 1
+        else:
+            q_timeout = timeout / 2.0
+
         try:
             queue = asyncio.Queue()
             self.method_results[message['id']] = queue
 
             # just raise the exception to user
             await self._ws.send(message_json)
-            return await asyncio.wait_for(queue.get(), timeout)
-        except asyncio.TimeoutError:
-            raise TimeoutException("Calling {} timeout".format(message['method']))
+
+            while not self._stopped.is_set():
+                try:
+                    if isinstance(timeout, (int, float)):
+                        if timeout < q_timeout:
+                            q_timeout = timeout
+
+                        timeout -= q_timeout
+
+                    return await asyncio.wait_for(queue.get(), q_timeout)
+                except asyncio.TimeoutError:
+                    if isinstance(timeout, (int, float)) and timeout <= 0:
+                        raise TimeoutException("Calling %s timeout" % message['method'])
+
+                    continue
+
+            raise UserAbortException("User abort, call stop() when calling %s" % message['method'])
         finally:
             self.method_results.pop(message['id'])
 
