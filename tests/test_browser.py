@@ -76,6 +76,8 @@ async def test_browser_tabs_map():
 @pytest.mark.asyncio
 async def test_browser_new_10_tabs():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tabs = []
     for i in range(10):
         tabs.append(await browser.new_tab())
@@ -93,6 +95,8 @@ async def test_browser_new_10_tabs():
 @pytest.mark.asyncio
 async def test_browser_new_100_tabs():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tabs = []
     for i in range(100):
         tabs.append(await browser.new_tab())

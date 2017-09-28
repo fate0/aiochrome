@@ -21,7 +21,7 @@ async def close_all_tabs(browser):
         await browser.close_tab(tab)
 
     await asyncio.sleep(1)
-    assert len(browser.list_tab()) == 0
+    assert len(await browser.list_tab()) == 0
 
 
 @pytest.mark.asyncio
@@ -36,6 +36,8 @@ async def new_multi_tabs(browser, n):
 @pytest.mark.asyncio
 async def test_normal_callmethod():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tabs = await new_multi_tabs(browser, 10)
 
     for tab in tabs:
@@ -55,6 +57,8 @@ async def test_normal_callmethod():
 @pytest.mark.asyncio
 async def test_set_event_listener():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tabs = await new_multi_tabs(browser, 10)
 
     async def request_will_be_sent(tab, **kwargs):

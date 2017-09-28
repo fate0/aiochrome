@@ -23,6 +23,8 @@ async def close_all_tabs(browser):
 @pytest.mark.asyncio
 async def test_normal_callmethod():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     await tab.start()
@@ -40,6 +42,8 @@ async def test_normal_callmethod():
 @pytest.mark.asyncio
 async def test_invalid_method():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     await tab.start()
@@ -54,6 +58,8 @@ async def test_invalid_method():
 @pytest.mark.asyncio
 async def test_invalid_params():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     await tab.start()
@@ -86,6 +92,8 @@ async def test_invalid_params():
 @pytest.mark.asyncio
 async def test_set_event_listener():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     async def request_will_be_sent(**kwargs):
@@ -107,6 +115,8 @@ async def test_set_event_listener():
 @pytest.mark.asyncio
 async def test_set_wrong_listener():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     await tab.start()
@@ -121,6 +131,8 @@ async def test_set_wrong_listener():
 @pytest.mark.asyncio
 async def test_get_event_listener():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     async def request_will_be_sent(**kwargs):
@@ -150,6 +162,8 @@ async def test_get_event_listener():
 @pytest.mark.asyncio
 async def test_reuse_tab_error():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     async def request_will_be_sent(**kwargs):
@@ -177,6 +191,8 @@ async def test_reuse_tab_error():
 @pytest.mark.asyncio
 async def test_del_event_listener():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
     test_list = []
 
@@ -200,6 +216,8 @@ async def test_del_event_listener():
 @pytest.mark.asyncio
 async def test_del_all_event_listener():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
     test_list = []
 
@@ -230,6 +248,8 @@ class CallableClass(object):
 @pytest.mark.asyncio
 async def test_use_callable_class_event_listener():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     await tab.start()
@@ -249,6 +269,8 @@ async def test_use_callable_class_event_listener():
 @pytest.mark.asyncio
 async def test_status():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     assert tab.status == aiochrome.Tab.status_initial
@@ -279,6 +301,8 @@ async def test_status():
 @pytest.mark.asyncio
 async def test_call_method_timeout():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     await tab.start()
@@ -300,6 +324,8 @@ async def test_call_method_timeout():
 @pytest.mark.asyncio
 async def test_callback_exception():
     browser = aiochrome.Browser()
+    await close_all_tabs(browser)
+
     tab = await browser.new_tab()
 
     async def request_will_be_sent(**kwargs):
