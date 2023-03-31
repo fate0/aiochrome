@@ -26,7 +26,7 @@ class Browser:
 
     async def new_tab(self, url=None, timeout=None):
         url = url or ''
-        async with self.session.get("{}/json/new?{}".format(self.dev_url, url), timeout=timeout) as rp:
+        async with self.session.put("{}/json/new?{}".format(self.dev_url, url), timeout=timeout) as rp:
             tab_json = await rp.json()
             tab = Tab(**tab_json)
             self._tabs[tab.id] = tab
